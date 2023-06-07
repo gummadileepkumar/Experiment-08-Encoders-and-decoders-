@@ -55,40 +55,88 @@ D7 = X Y Z
 ## Figure -04 8 to 3 Decoder implementation 
 
 ### Procedure
-/* write all the steps invloved */
+#### Step-1:
+
+create module encoder and decoder.
+
+#### Step-2:
+
+Get inputs and outputs for encoders and decoders.
+
+#### Step-3:
+
+perform or operation for encoder and and logic for decoders.
+
+#### Step-4:
+
+perform RTL LOGIC and get waveform.
+
+#### Step-5:
+
+End the module.
 
 
 
 ### PROGRAM 
-/*
+
 Program for Endocers and Decoders  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
-
-
-
-
-
+#### Developed by: Gumma Dileep Kumar 
+#### RegisterNumber: 212222240032 
+### ENCODER
+```python
+module encoder(a,b,c,d0,d1,d2,d3,d4,d5,d6,d7);
+output a,b,c;
+input d0,d1,d2,d3,d4,d5,d6,d7;
+or(a,d4,d5,d6,d7);
+or(b,d2,d3,d6,d7);
+or(c,d1,d3,d5,d7);
+endmodule
+```
+### DECODER
+```python
+module decoder(d0,d1,d2,d3,d4,d5,d6,d7,a,b,c);
+output d0,d1,d2,d3,d4,d5,d6,d7;
+input a,b,c;
+assign d0 = (~a & ~b & ~c);
+assign d1 = (~a & ~b & c);
+assign d2 = (~a & b & ~c);
+assign d3 = (~a & b & c);
+assign d4 = (a & ~b & ~c);
+assign d5 = (a & ~b & c);
+assign d6 = (a & b & ~c);
+assign d7 = (a & b & c);
+endmodule 
+```
 
 ### RTL LOGIC  
+#### ENCODER
+
+![encoder](https://github.com/gummadileepkumar/Experiment-08-Encoders-and-decoders-/assets/118707761/de24a951-e7f2-4204-ba6d-29acfe64e2f0)
+
+#### DECODER
 
 
 
-
-
-
-
+![decoder](https://github.com/gummadileepkumar/Experiment-08-Encoders-and-decoders-/assets/118707761/04b7b876-b65f-4308-b328-32634ac4b767)
 
 ### TIMING DIGRAMS  
+#### ENCODER
 
+
+![RTL_encoder](https://github.com/gummadileepkumar/Experiment-08-Encoders-and-decoders-/assets/118707761/788823a8-0d31-4c06-a0b8-3165460a3667)
+#### DECODER
+![RTL_decoder](https://github.com/gummadileepkumar/Experiment-08-Encoders-and-decoders-/assets/118707761/418cf200-5a23-401a-9648-45c223730a3c)
 
 
 
 
 ### TRUTH TABLE 
+#### ENCODER
+![encoder_truth](https://github.com/gummadileepkumar/Experiment-08-Encoders-and-decoders-/assets/118707761/eaba2d83-af65-42b9-90c2-ca8747377025)
+#### DECODER
 
 
+![decoder_truth](https://github.com/gummadileepkumar/Experiment-08-Encoders-and-decoders-/assets/118707761/1fccab43-ca74-4db3-9cff-ffbefae26d64)
 
 
 
